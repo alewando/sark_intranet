@@ -1,0 +1,411 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./DevDays_files/filelist.xml">
+<link rel=Edit-Time-Data href="./DevDays_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Implementation Track</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Software Architects, Inc.</o:Author>
+  <o:LastAuthor>Brian Samson</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>151</o:TotalTime>
+  <o:Created>2000-10-16T14:23:00Z</o:Created>
+  <o:LastSaved>2000-10-16T14:29:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>1004</o:Words>
+  <o:Characters>5723</o:Characters>
+  <o:Company>Software Architects, Inc.</o:Company>
+  <o:Lines>47</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>7028</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	mso-bidi-font-weight:normal;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{mso-style-update:auto;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo1;
+	tab-stops:list .25in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-114655980;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"List Bullet";
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1028"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>On October 10<sup>th</sup>, Greg Morefield, Don Oliver, Tom Lutz, Jason
+Steinbrunner, Mark Apgar, Brian Bahr, BJ McClure, and Brian Samson traveled to
+Microsoft Developer Days 2000 at the Radisson Hotel in Sharonville.<span
+style="mso-spacerun: yes">  </span>The goal of this conference was to provide
+developers an architectural and implementation-based understanding of the
+Microsoft .NET initiative, and how to use the new Microsoft 2000 lineup to
+build “world class applications”.<o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>At the beginning of the day, we were unsure as to how much techno-geek
+material vs. Microsoft marketing we were going to get.<span
+style="mso-spacerun: yes">  </span>We were hoping for code snippets,
+descriptions of resolutions to past development issues, and an idea of what
+technical value the new Microsoft 2000 lineup would provide.<span
+style="mso-spacerun: yes">  </span>By 5:00pm, we felt that although there
+definitely was a significant amount of MS hype sprinkled throughout the day,
+some of the material indeed educated us on how we might be using the .NET
+lineup in the near future.<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>First, let’s define what the .NET initiative actually is.<span
+style="mso-spacerun: yes">  </span>The goal of .NET is to provide the
+capability “<a href="http://www.microsoft.com/net/developer/developers.asp">to
+create programs that transcend device boundaries utilizing the Internet</a>”.<span
+style="mso-spacerun: yes">  </span>To this point, application development has
+been geared towards integrating specific applications together – in other
+words, a tightly coupled development.<span style="mso-spacerun: yes"> 
+</span>Microsoft proposes that new development center around a loosely coupled
+development methodology, where application components act as web services.<span
+style="mso-spacerun: yes">  </span>These services expose their features
+programmatically using standard Internet protocols such as HTTP and XML.
+Conceptually, this methodology is nothing more than black-box component
+development with exposed API interfaces, so it shouldn’t be too difficult to
+retrain yourself.<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>Now, of course Microsoft isn’t providing all of this nifty information
+and methodology without new tools to help you out, so here’s the run-down of
+new <a href="http://www.microsoft.com/servers/net/default.htm">.NET Enterprise
+Servers</a> you’ll be seeing soon:<o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-family:Symbol;
+mso-bidi-font-family:Arial'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>Microsoft Windows Server 2000 – </span></b><span style='font-family:
+Verdana;mso-bidi-font-family:Arial'>from the “duh” category, this is
+Microsoft’s bread and butter operating system that’s required for anything else
+to work.<o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-family:Symbol;
+mso-bidi-font-family:Arial'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>Microsoft Commerce Server 2000 – </span></b><span style='font-family:
+Verdana;mso-bidi-font-family:Arial'>the old Site Server Commerce Edition.<span
+style="mso-spacerun: yes">  </span>This solution allows you to quickly build an
+online business.<o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-family:Symbol;
+mso-bidi-font-family:Arial'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>Microsoft BizTalk Server 2000 – </span></b><span style='font-family:
+Verdana;mso-bidi-font-family:Arial'>the center of the parade.<span
+style="mso-spacerun: yes">  </span>This tool lies at the heart of providing a loosely
+coupled environment, providing an integrated solution for workflow orchestration.<o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-family:Symbol;
+mso-bidi-font-family:Arial'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>Microsoft Exchange Server 2000 – </span></b><span style='font-family:
+Verdana;mso-bidi-font-family:Arial'>adds stronger workflow collaboration and
+now provides access capabilities outside of the standard PC.<o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-family:Symbol;
+mso-bidi-font-family:Arial'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>Microsoft Application Server 2000 – </span></b><span style='font-family:
+Verdana;mso-bidi-font-family:Arial'>a new tool for deploying and managing
+high-availability web applications.<span style="mso-spacerun: yes"> 
+</span>Provides component load balancing, advanced clustering, and rolling
+upgrades.<o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-family:Symbol;
+mso-bidi-font-family:Arial'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>Microsoft Host Integration Server 2000 – </span></b><span
+style='font-family:Verdana;mso-bidi-font-family:Arial'>allows you to connect to
+existing other systems (mainframes, unix boxes, etc.).<span
+style="mso-spacerun: yes">  </span>Provides MMC support, single sign-on, and
+automatic password synchronization capabilities.<o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-family:Symbol;
+mso-bidi-font-family:Arial'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>Microsoft Internet Security and Acceleration Server 2000 – </span></b><span
+style='font-family:Verdana;mso-bidi-font-family:Arial'>otherwise known as Proxy
+Server. <o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-family:Symbol;
+mso-bidi-font-family:Arial'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>Microsoft SQL Server 2000 – </span></b><span style='font-family:Verdana;
+mso-bidi-font-family:Arial'>I don’t believe SQL Server 2000 is a required
+component, but it’s in production today, so I thought I’d throw it in for
+realism.<o:p></o:p></span></p>
+
+<p class=MsoListBullet style='mso-list:none;tab-stops:.5in'><span
+style='font-family:Verdana;mso-bidi-font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>The following is a brief summary of the tracks the group attended.<span
+style="mso-spacerun: yes">  </span>If you have any questions about these
+Microsoft products or the new development focus, ask someone from this group
+and they’ll be more than happy to expound upon their knowledge.<span
+style="mso-spacerun: yes">  </span>We also have the conference CD available in
+the office if you care to review the presentations.<o:p></o:p></span></p>
+
+<p class=MsoListBullet style='mso-list:none;tab-stops:.5in'><span
+style='font-family:Verdana;mso-bidi-font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoListBullet style='mso-list:none;tab-stops:.5in'><span
+style='font-family:Verdana;mso-bidi-font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText><b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Arial'>Architecture Track </span></b><i><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Arial'>(Brian Samson)</span></i><b><span style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Arial'><o:p></o:p></span></b></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>The architecture track gave the attendees an understanding of where each
+of the .NET Enterprise Servers.<span style="mso-spacerun: yes">  </span>Below
+is a slide from the presentation that depicts how all these servers
+interoperate.<span style="mso-spacerun: yes">  </span>The three colors indicate
+three-tier application: yellow=presentation, orange=business, green=data.<o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><o:wrapblock><v:shapetype id="_x0000_t75"
+  coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+  filled="f" stroked="f">
+  <v:stroke joinstyle="miter"/>
+  <v:formulas>
+   <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+   <v:f eqn="sum @0 1 0"/>
+   <v:f eqn="sum 0 0 @1"/>
+   <v:f eqn="prod @2 1 2"/>
+   <v:f eqn="prod @3 21600 pixelWidth"/>
+   <v:f eqn="prod @3 21600 pixelHeight"/>
+   <v:f eqn="sum @0 0 1"/>
+   <v:f eqn="prod @6 1 2"/>
+   <v:f eqn="prod @7 21600 pixelWidth"/>
+   <v:f eqn="sum @8 21600 0"/>
+   <v:f eqn="prod @7 21600 pixelHeight"/>
+   <v:f eqn="sum @10 21600 0"/>
+  </v:formulas>
+  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+  <o:lock v:ext="edit" aspectratio="t"/>
+ </v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+  margin-left:0;margin-top:0;width:359.4pt;height:270pt;z-index:1;
+  mso-position-horizontal-relative:text;mso-position-vertical-relative:text'>
+  <v:imagedata src="./DevDays_files/image001.wmz" o:title=""/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![endif]--><![if !vml]><img width=479 height=360
+ src="./DevDays_files/image002.gif" v:shapes="_x0000_s1026"><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+<span style='font-family:Verdana;mso-bidi-font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>The presenter provided information regarding pros and cons of current
+technology vs. .NET technology, and defined the business case for each of the
+products listed.<span style="mso-spacerun: yes">  </span>The second half of the
+track focused on BizTalk Server 2000, but only at a cursory level.<span
+style="mso-spacerun: yes">  </span>However, the slide below describes how
+loosely coupled applications work with BizTalk to create an application-independent
+environment.<o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><o:wrapblock><v:shape id="_x0000_s1027"
+  type="#_x0000_t75" style='position:absolute;margin-left:0;margin-top:0;
+  width:5in;height:270pt;z-index:2;mso-position-horizontal-relative:text;
+  mso-position-vertical-relative:text'>
+  <v:imagedata src="./DevDays_files/image003.wmz" o:title=""/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![endif]--><![if !vml]><img width=480 height=360
+ src="./DevDays_files/image004.gif" v:shapes="_x0000_s1027"><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+<span style='font-family:Verdana;mso-bidi-font-family:Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>It was demonstrated how BizTalk can now handle workflow and automation situations,
+and changing that workflow can theoretically be as simple as modifying a
+flowchart (which looks strangely similar to Visio).<span style="mso-spacerun:
+yes">  </span>Microsoft affectionately terms this capability orchestration,
+where each step of a process is initiated by the receipt of an XML message from
+a particular location, and each step ends by sending an XML message to a
+particular location.<o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText><b><span style='font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:Verdana;mso-bidi-font-family:Arial'>Implementation Track </span></b><i><span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:Verdana;
+mso-bidi-font-family:Arial'>(Mark Apgar)</span></i><b><span style='font-size:
+12.0pt;mso-bidi-font-size:10.0pt;font-family:Verdana;mso-bidi-font-family:Arial'><o:p></o:p></span></b></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>This session was divided into 4 main categories: Commerce Server 2000
+Solution Sites, SQL Server 2000 XML support, Exchange Server 2000, and using
+the SOAP Toolkit for Visual Studio 6.0 to create Web Services.<span
+style="mso-spacerun: yes">  </span>Commerce Server 2000 Solution sites provide
+a starting point for the developers.<span style="mso-spacerun: yes"> 
+</span>The solution sites include a retail site, an active directory supplier
+site, and a blank site.<span style="mso-spacerun: yes">  </span>These solution
+sites provide basic framework for developing internet sites including a
+global.asa file, ASP files, and templates in a virtual root, defined pipelines,
+set up of SQL server and related tables.<span style="mso-spacerun: yes"> 
+</span>SQL Server 2000 XML support provides a way for the developer to query
+the database and return the information in XML format.<span
+style="mso-spacerun: yes">  </span>Extensions of ADO were added to allow the
+user to query the database and return a query stream in XML format.<span
+style="mso-spacerun: yes">  </span>Exchange Server 2000 Web Store is a good
+place to hold Corporate Knowledge where the application can access it.<span
+style="mso-spacerun: yes">  </span>The request would be made using XML to the
+Web Store where HTTP-DAV would be used to search and return the information in
+XML format to the browser.<span style="mso-spacerun: yes">  </span>Finally, the
+SOAP Toolkit for Visual Studio 6.0 is a general XML messaging protocol that is
+OS, project model, and programming language neutral.<span style="mso-spacerun:
+yes">  </span>The basic use would be for retrieving information from another
+web site without leaving the current site.<span style="mso-spacerun: yes"> 
+</span>For example, if a user would like to track the order status of an
+article of clothing bought on the web, the website would have the ability to
+send a request to UPS, return data to the website and display the status of the
+order without leaving the current page.<span style="mso-spacerun: yes"> 
+</span>This process describes a web service.<o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='font-family:Verdana;mso-bidi-font-family:
+Arial'>The second half of the track focused on how XML and BizTalk Server help
+integrate applications and business processes.<span style="mso-spacerun: yes"> 
+</span>The presentation detailed the process of using the server including
+document formats, data mapping, submitting documents, processing and routing,
+and business process Orchestration.<span style="mso-spacerun: yes">  </span>The
+presentation went into depth on each of these processes and integrating them
+with SQL Server and XML. <o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

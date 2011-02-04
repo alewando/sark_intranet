@@ -1,0 +1,40 @@
+.clsMenuTitle
+{
+    CURSOR: hand
+}
+.clsMenu
+{
+    BORDER-RIGHT: gray thin outset;
+    PADDING-RIGHT: 1px;
+    BORDER-TOP: gray thin outset;
+    PADDING-LEFT: 5px;
+    FONT-SIZE: 20pt;
+    Z-INDEX: 2;
+    VISIBILITY: hidden;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: gray thin outset;
+    WIDTH: 118px;
+    COLOR: white;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: gray thin outset;
+    FONT-FAMILY: verdana;
+    POSITION: absolute;
+    BACKGROUND-COLOR: #778899
+}
+.clsMenu A
+{
+    FONT-SIZE: 20pt;
+    COLOR: whitesmoke;
+    BACKGROUND-COLOR: transparent;
+    TEXT-DECORATION: none
+}
+.clsMenu A:hover
+{
+    COLOR: lemonchiffon;
+    TEXT-DECORATION: none
+}
+.clsMenu A:active
+{
+    COLOR: yellow;
+    BACKGROUND-COLOR: transparent
+}

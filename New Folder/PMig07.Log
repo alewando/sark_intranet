@@ -1,0 +1,7 @@
+PMigration InitInstance - logging session started.
+CompleteQVBConversion()
+1. QConvertInit() Success
+Could not get first intermediate quarantine file. Error 0x00000001
+Completed the conversion of 0
+CompleteQVBConversion() returned 0
+PMigration ExitInstance - logging session stopped.

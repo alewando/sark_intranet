@@ -1,0 +1,55 @@
+BODY
+{
+}
+.StandingsTable
+{
+    BORDER-RIGHT: outset;
+    BORDER-TOP: outset;
+    BORDER-LEFT: outset;
+    BORDER-BOTTOM: outset;
+    BACKGROUND-COLOR: lightgrey
+}
+.leagueHeader
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 16pt;
+    COLOR: navy;
+    FONT-FAMILY: Tahoma, Verdana, Arial
+}
+.standingsHeader
+{
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 12pt;
+    COLOR: black;
+    FONT-FAMILY: Tahoma, Verdana, Arial
+}
+.scheduleHeader
+{
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 12pt;
+    COLOR: black;
+    FONT-FAMILY: Tahoma, Verdana, Arial
+}
+.weekHeader
+{
+    FONT-SIZE: 12pt;
+    COLOR: darkslateblue;
+    FONT-FAMILY: Arial, 'Courier New'
+}
+.playerWinner
+{
+    FONT-SIZE: smaller;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: lightsteelblue
+}
+.playerLoser
+{
+    FONT-SIZE: smaller;
+    COLOR: black;
+    FONT-FAMILY: Arial
+}
+TR.lateGame
+{
+    BACKGROUND-COLOR: crimson
+}

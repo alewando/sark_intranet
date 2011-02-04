@@ -1,0 +1,21 @@
+PMigration InitInstance - logging session started.
+DetectInstallations()
+DetectNAV()
+Found NAV key: Software\Symantec\Norton AntiVirus NT
+No CurrentVersion Value
+Found Symantec Installed Apps key: Software\Symantec\InstalledApps
+Found NAV path: C:\Program Files\NAV(Exists)
+No Norton SystemWorks Value
+No Quarantine key: Software\Symantec\Norton AntiVirus\Quarantine
+No Uninstall Key: Software\Microsoft\Windows\CurrentVersion\Uninstall\Norton AntiVirus
+DetectNAV() returned 0
+DetectLDVP()
+No LDVP5 key: Software\INTEL\LANDesk\VirusProtect5\CurrentVersion
+Found LDVP6 key: Software\INTEL\LANDesk\VirusProtect6\CurrentVersion
+No Home Directory Value
+No LDVP6 Uninstall key: Software\Microsoft\Windows\CurrentVersion\Uninstall\LDVP
+DetectLDVP() returned 0
+SaveConfigOptions()
+SaveConfigOptions() returned 1
+DetectInstallations() returned 0
+PMigration ExitInstance - logging session stopped.

@@ -1,0 +1,63 @@
+BODY {
+	FONT-FAMILY: arial, helvetica; FONT-SIZE: 10pt; fontFamily: arial, helvetica
+}
+TD {
+	FONT-FAMILY: arial, helvetica; FONT-SIZE: 10pt; fontFamily: arial, helvetica
+}
+INPUT {
+	FONT-FAMILY: arial, helvetica; FONT-SIZE: 10pt; fontFamily: arial, helvetica
+}
+SELECT {
+	FONT-FAMILY: arial, helvetica; FONT-SIZE: 10pt; fontFamily: arial, helvetica
+}
+TEXTAREA {
+	FONT-FAMILY: arial, helvetica; FONT-SIZE: 10pt; fontFamily: arial, helvetica
+}
+A {
+	TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.nav {
+	COLOR: navy; FONT-SIZE: 8pt
+}
+.footer {
+	COLOR: navy; FONT-SIZE: 8pt
+}
+.parent {
+	CURSOR: hand
+}
+.parent TD {
+	CURSOR: hand
+}
+.button {
+	BACKGROUND-COLOR: #cccc99
+}
+.small {
+	FONT-FAMILY: arial, helvetica; FONT-SIZE: 8pt; fontFamily: arial, helvetica
+}
+.small TD {
+	FONT-FAMILY: arial, helvetica; FONT-SIZE: 8pt; fontFamily: arial, helvetica
+}
+.problem {
+	BORDER-BOTTOM: black 1px solid; BORDER-LEFT: gray 1px solid; BORDER-RIGHT: black 1px solid; BORDER-TOP: gray 1px solid
+}
+.problem TD {
+	FONT-FAMILY: arial, helvetica; FONT-SIZE: 9pt; fontFamily: arial, helvetica
+}
+xul {
+	FONT-SIZE: 8pt
+}
+xul DT {
+	FONT-WEIGHT: bold
+}
+xul LI {
+	COLOR: #000099; FONT-WEIGHT: normal; PADDING-TOP: 5px
+}
+xul LI A {
+	FONT-WEIGHT: bold
+}
+xul IMG {
+	BORDER-BOTTOM: black 1px solid; BORDER-LEFT: silver 1px solid; BORDER-RIGHT: black 1px solid; BORDER-TOP: silver 1px solid
+}

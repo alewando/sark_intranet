@@ -1,0 +1,320 @@
+DIV.clsDocBody
+{
+    FONT-FAMILY: verdana,arial,helvetica,sans-serif;
+    FONT-SIZE: 75%
+}
+DIV.clsDocBody TD
+{
+    FONT-SIZE: 70%
+}
+DIV.clsDocBody TH
+{
+    FONT-SIZE: 70%
+}
+DIV.clsDocBody SELECT
+{
+    FONT-FAMILY: verdana,arial,helvetica,sans-serif;
+    FONT-SIZE: 80%
+}
+TD.clsTab
+{
+    BACKGROUND-COLOR: maroon;
+    BORDER-BOTTOM: gray thin inset;
+    BORDER-LEFT: gray 1px;
+    BORDER-RIGHT: gray thin solid;
+    BORDER-TOP: gray 1px;
+    CLEAR: both;
+    CURSOR: hand;
+    MARGIN-LEFT: 1px;
+    MARGIN-RIGHT: 1px;
+    PADDING-LEFT: 1px;
+    PADDING-RIGHT: 1px;
+    TEXT-ALIGN: left;
+    TEXT-INDENT: 1px;
+    VERTICAL-ALIGN: sub
+}
+TD.clsTab A
+{
+    CLEAR: both;
+    COLOR: #ffffff;
+    FONT-SIZE: 95%;
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none;
+    TEXT-INDENT: 1px;
+    VERTICAL-ALIGN: sub
+}
+TD.clsTab A:hover
+{
+    CLEAR: both;
+    COLOR: #ffffff;
+    FONT-SIZE: 95%;
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none;
+    TEXT-INDENT: 1px;
+    VERTICAL-ALIGN: sub
+}
+TD.clsTab A:active
+{
+    CLEAR: both;
+    COLOR: #ffffff;
+    FONT-SIZE: 95%;
+    TEXT-ALIGN: center;
+    TEXT-DECORATION: none;
+    TEXT-INDENT: 1px;
+    VERTICAL-ALIGN: sub
+}
+TD.clsTabSelected
+{
+    BACKGROUND-COLOR: #ffffcc;
+    BORDER-LEFT: gray 2px outset;
+    BORDER-RIGHT: gray 2px solid;
+    BORDER-TOP: gray 2px outset;
+    CLEAR: both
+}
+TD.clsTabSelected A
+{
+    COLOR: maroon;
+    FONT-SIZE: 95%;
+    TEXT-DECORATION: none
+}
+TD.clsTabSelected A:hover
+{
+    COLOR: maroon;
+    FONT-SIZE: 95%;
+    TEXT-DECORATION: none
+}
+TD.clsTabSelected A:active
+{
+    COLOR: maroon;
+    FONT-SIZE: 95%;
+    TEXT-DECORATION: none
+}
+IMG.clsMoreImg
+{
+    MARGIN-TOP: 5px
+}
+TH
+{
+    PADDING-BOTTOM: 6px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 10px
+}
+INPUT.clsButton
+{
+    FONT-WEIGHT: bold
+}
+A
+{
+    COLOR: #003399;
+    TEXT-DECORATION: none
+}
+A:visited
+{
+    COLOR: #6699cc
+}
+A:active
+{
+    TEXT-DECORATION: underline
+}
+A:hover
+{
+    TEXT-DECORATION: underline
+}
+#frmSearch A:visited
+{
+    COLOR: #003399
+}
+#frmViews A:visited
+{
+    COLOR: #003399
+}
+#custLink A:visited
+{
+    COLOR: #003399
+}
+#mSubscr A:visited
+{
+    COLOR: #003399
+}
+#mDevSupport A:visited
+{
+    COLOR: #003399
+}
+#cpyrt A
+{
+    COLOR: #000000
+}
+#cpyrt A:hover
+{
+    COLOR: #003399
+}
+IMG.clsImgButton
+{
+    CURSOR: hand;
+    MARGIN-TOP: 2px
+}
+.clsTocHead
+{
+    COLOR: #003399;
+    FONT-SIZE: 110%;
+    FONT-STYLE: normal;
+    FONT-VARIANT: normal;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 110%
+}
+DIV.clsTocHead
+{
+    CURSOR: hand;
+    MARGIN-TOP: 2px
+}
+DIV.clsTocItem DIV
+{
+    COLOR: #336699;
+    FONT-SIZE: 95%;
+    FONT-STYLE: normal;
+    FONT-VARIANT: normal;
+    FONT-WEIGHT: normal;
+    LINE-HEIGHT: 120%;
+    PADDING-BOTTOM: 4px
+}
+DIV.clsTocItem1
+{
+    MARGIN-TOP: 5px;
+    PADDING-BOTTOM: 4px
+}
+TD.clsLNSubItems DIV
+{
+    FONT-SIZE: 95%;
+    FONT-STYLE: normal;
+    FONT-VARIANT: normal;
+    FONT-WEIGHT: normal;
+    LINE-HEIGHT: 115%
+}
+P.clsFeatureText SPAN
+{
+    FONT-SIZE: 125%;
+    LINE-HEIGHT: 130%
+}
+P.clsFeatureTabText SPAN
+{
+    FONT-SIZE: 125%;
+    LINE-HEIGHT: 130%
+}
+P.clsFeatureText SPAN.PD
+{
+    FONT-SIZE: 100%;
+    LINE-HEIGHT: 130%
+}
+P.clsFeatureTabText SPAN
+{
+    FONT-SIZE: 100%;
+    LINE-HEIGHT: 130%
+}
+P.clsFeatureText
+{
+    FONT-SIZE: 100%;
+    LINE-HEIGHT: 140%
+}
+P.clsFeatureTabText
+{
+    FONT-SIZE: 100%;
+    LINE-HEIGHT: 170%
+}
+TABLE#idTabs TD
+{
+    FONT-SIZE: 72%
+}
+TABLE#newsContent
+{
+    MARGIN-RIGHT: 50px
+}
+SPAN.clsLeftNavDot
+{
+    COLOR: red;
+    FONT-SIZE: 115%;
+    LINE-HEIGHT: 1
+}
+TD.clsLND
+{
+    CLEAR: both;
+    COLOR: red;
+    FONT-SIZE: 115%;
+    LINE-HEIGHT: 1.3
+}
+SPAN.clsCatHeader
+{
+    BACKGROUND-COLOR: #cccccc;
+    COLOR: #ffffff;
+    HEIGHT: 1em;
+    MARGIN-LEFT: 1px;
+    MARGIN-RIGHT: 1px;
+    PADDING-BOTTOM: 1px;
+    PADDING-LEFT: 1px;
+    PADDING-RIGHT: 1px;
+    PADDING-TOP: 1px;
+    TEXT-INDENT: 1px
+}
+SPAN.clsBodyTxt
+{
+    FONT-SIZE: 100%
+}
+FONT.clsSmallBodyTxt
+{
+    FONT-SIZE: 100%
+}
+SPAN.story
+{
+    CLEAR: both;
+    FONT-SIZE: 100%;
+    FONT-STYLE: normal;
+    FONT-VARIANT: normal;
+    FONT-WEIGHT: normal;
+    LINE-HEIGHT: 140%
+}
+SPAN.st
+{
+    FONT-SIZE: 100%;
+    FONT-STYLE: normal;
+    FONT-VARIANT: normal;
+    FONT-WEIGHT: normal;
+    LINE-HEIGHT: 140%
+}
+SPAN.category
+{
+    COLOR: #ffffff;
+    FONT-SIZE: 75%;
+    FONT-STYLE: normal;
+    FONT-VARIANT: normal;
+    FONT-WEIGHT: bold
+}
+SPAN.pubdate
+{
+    COLOR: #999999
+}
+SPAN.pd
+{
+    COLOR: #999999
+}
+.userData
+{
+    BEHAVIOR: url(#default#userdata)
+}
+#idToolbar A:hover
+{
+    TEXT-DECORATION: none
+}
+TABLE.clsTabContents
+{
+    BACKGROUND-COLOR: #ffffcc;
+    BORDER-BOTTOM: gray double;
+    BORDER-LEFT: gray thin solid;
+    BORDER-RIGHT: gray thin solid;
+    CLEAR: both;
+    TEXT-ALIGN: justify;
+    WIDTH: 100%
+}
+TD.clsLNSubItems
+{
+    CLEAR: both
+}

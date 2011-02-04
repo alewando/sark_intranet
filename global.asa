@@ -1,0 +1,491 @@
+<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
+
+'You can add special event handlers in this file that will get run automatically when special Active Server Pages events
+'occur.  To create these handlers, just create a subroutine with a name from the list below that corresponds to the event
+'you want to use.  For example, to create an event handler for Session_OnStart, you would put the following code into this
+'file (without the comments):
+'Sub Session_OnStart
+'**Put your code here **
+'End Sub
+
+'EventName            Description
+'Session_OnStart      Runs the first time a user runs any page in your application
+'Session_OnEnd        Runs when a user's session times out or quits your application
+'Application_OnStart  Runs once when the first page of your application is run for the first time by any user
+'Application_OnEnd    Runs once when the web server shuts down
+    
+Sub Application_OnStart
+    <!--#include file="./environment.asp" -->
+
+	'==Visual InterDev Generated - startspan==
+	'--Project Data Connection
+	' ** Database settings are in environment.asp
+	'==Visual InterDev Generated - endspan==
+
+	'---------------------------------------------------------------------------
+	' The following section was moved to Session_OnStart by Nick Yates
+	'	on 3-29-2000.  The 401k and weather map were not updating because
+	'	this section only gets run when the server is restarted.
+	'----------------------------------------------------------------------------
+	'----------------------------------------------
+	'  Build weather, search and stock entries on  
+	'  the right margin, replacing the section     
+	'  preference buttons.                         
+	'----------------------------------------------
+
+
+	'-----------------------------
+	'  Store all web site settings  
+	'-----------------------------
+
+
+	' SITE INFORMATION
+	Application("Web") = "intranet"
+	Application("WebStart") = Now
+	Application("DefaultBranch") = "Cincinnati"
+	Application("SiteVision") = "Supporting our branch through the sharing of knowledge..."
+
+	' SHARED DIRS INFORMATION
+	Application("RootFileDir") = "\\ntserver-col\sys\Users"
+	Application("OfficeDir") = "c:\WebDirs\OfficeDocs"
+	
+	' EMAIL INFORMATION
+	'if not Application("IntranetDevelopment") then
+		Set Application("RenderApplication") = nothing
+		set objRenderApp = Server.CreateObject("AMHTML.Application")
+		if Err = 0 then Set Application("RenderApplication") = objRenderApp
+	'end if
+
+	' LINK DESCRIPTIONS
+	Application("LinkDesc_Welcome")		= "Welcome to our intranet site!"
+	Application("LinkDesc_Directory")	= "Sark and branch info."
+	Application("LinkDesc_Events")		= "Checkout upcoming events."
+	Application("LinkDesc_News")		= "Stop on over at the Web Cafe."
+	Application("LinkDesc_Technology")	= "Dive in to our technologies."
+	Application("LinkDesc_Training")	= "Check out Training Classes."
+	Application("LinkDesc_Preferences")	= "Customize your experience."
+	Application("LinkDesc_Office")		= "Office docs, benefit info, etc."
+	Application("LinkDesc_Email")		= "Access your email"
+	Application("LinkDesc_Projects")	= "View client summaries."
+	Application("LinkDesc_Sports")		= "For the latest in SARK sporting info."	
+	Application("LinkDesc_Repository")		= "Solution Services document repository."		
+
+	' DEFAULT NAVIGATION PREFERENCES
+	Application("DefaultNavWelcome")	= "*preferences*"
+	Application("DefaultNavDirectory")	= "*clients*details*"
+	Application("DefaultNavEmail")		= "*email*"
+	Application("DefaultNavEvents")		= "*calendar*addnew*"
+	Application("DefaultNavNews")		= "*classifieds*"
+	Application("DefaultNavOffice")		= "*documentlist*"
+	Application("DefaultNavRecruiting")	= "*"
+	Application("DefaultNavProjects")	= "*clients*"
+	Application("DefaultNavTechnology")	= "*usergroups*"
+	Application("DefaultNavTraining")	= "*cbtcourses*"
+	Application("DefaultNavSports")		= "*wellness*basketball*"
+	
+	' CLEAR NAVIGATION PREFERENCES
+	Application("ClearNavWelcome")		= ""
+	Application("ClearNavDirectory")	= ""
+	Application("ClearNavEmail")		= ""
+	Application("ClearNavEvents")		= ""
+	Application("ClearNavNews")			= ""
+	Application("ClearNavOffice")		= ""
+	Application("ClearNavRecruiting")
+	Application("ClearNavProjects")		= ""
+	Application("ClearNavTechnology")	= ""
+	Application("ClearNavTraining")		= ""
+	Application("ClearNavSports")		= ""
+	
+	' STORE SECTION BUTTONS
+	'Application("WelcomeMargin") = sectionBtns
+
+	' SET CONCURRENT USER SETTINGS
+	Application("CurrentUsers") = 0
+	
+
+	'----------------------------
+	'  Create new app log entry  
+	'----------------------------
+
+	' OPEN DATABASE CONNECTION
+	set DataConn = Server.CreateObject("ADODB.Connection")
+	DataConn.ConnectionTimeout = Application("DataConn_ConnectionTimeout")
+	DataConn.CommandTimeout = Application("DataConn_CommandTimeout")
+	DataConn.Open Application("DataConn_ConnectionString"), Application("DataConn_RuntimeUserName"), Application("DataConn_RuntimePassword")
+	' INSERT APP LOG RECORD
+	if Application("ID") = "" then
+		set rs = DataConn.execute("insert into LogApp (AppStart) values ('" & Now & "')")
+		set rs = DataConn.execute("select max(LogApp_ID) from LogApp")
+		Application("ID") = rs(0)
+		rs.close
+		end if
+
+	set rs = DataConn.execute("select Branch_ID from Branch where Branch_Name = '" & Application("DefaultBranch") & "'")
+	if not rs.eof then
+		Application("DefaultBranchID") = rs("Branch_ID")
+		rs.close
+		set rs = nothing
+		end if
+
+	' CLOSE DATABASE CONNECTION
+	DataConn.close
+	set DataConn = nothing
+	
+End Sub
+
+
+
+
+
+Sub Application_OnEnd
+
+	'----------------------------
+	'  Update new app log entry  
+	'----------------------------
+
+	' OPEN DATABASE CONNECTION
+	set DataConn = Server.CreateObject("ADODB.Connection")
+	DataConn.ConnectionTimeout = Application("DataConn_ConnectionTimeout")
+	DataConn.CommandTimeout = Application("DataConn_CommandTimeout")
+	DataConn.Open Application("DataConn_ConnectionString"), Application("DataConn_RuntimeUserName"), Application("DataConn_RuntimePassword")
+	
+	' UPDATE APP LOG RECORD
+	set rs = DataConn.execute("update LogApp set AppEnd = '" & Now & "' where LogApp_ID = " & Application("ID"))
+
+	' CLOSE DATABASE CONNECTION
+	DataConn.close
+	set DataConn = nothing
+	
+	' DISPOSE OF RENDERAPP OBJECT
+	set objRenderApp = Application("RenderApplication")
+	if not objRenderApp is nothing then
+		set objRenderApp = nothing
+		set Application("RenderApplication") = nothing
+		end if
+
+End Sub
+
+
+
+
+
+Sub Session_OnStart
+
+	Session("Surveyed")=False
+	Session("UpdatedSkills") = False
+	
+	on error resume next
+	
+	'--------------------------------------
+	'  Store session information for user  
+	'--------------------------------------
+
+	' STORE CURRENT SESSION START
+	Session("Now") = Now
+
+	' INIT EMAIL SESSION CACHE
+	set Session("hImp") = 0                    ' NT Security impersonation
+	set Session("MAPIsession") = nothing       ' MAPI session with Exchange
+	
+	' STORE NT AUTHENTICATION LOGIN
+	NTUser = lcase(Request.ServerVariables("LOGON_USER"))
+	i = instr(NTUser, "\")
+	if i > 0 then NTUser = mid(NTUser, i+1)
+	i = instr(NTUser, "/")
+	if i > 0 then NTUser = mid(NTUser, i+1)
+	if right(NTUser, 6) = "_admin" then NTUser = left(NTUser, len(NTUser)-6)
+	Session("Username") = NTUser
+
+	' GET USER BROWSER INFORMATION
+	Set BrowserType = Server.CreateObject("MSWC.BrowserType")
+	Session("BrowserName") = BrowserType.Browser
+	Session("BrowserVersion") = BrowserType.Version
+	Session("BrowserVersionMajor") = BrowserType.MajorVer
+	Session("BrowserVersionMinor") = BrowserType.MinorVer
+	set BrowserType = nothing
+	<!--#include file="./browser.asp" -->
+
+	' OPEN DATABASE CONNECTION
+	set DataConn = Server.CreateObject("ADODB.Connection")
+	DataConn.ConnectionTimeout = Session("DataConn_ConnectionTimeout")
+	DataConn.CommandTimeout = Session("DataConn_CommandTimeout")
+	DataConn.Open Application("DataConn_ConnectionString"), Application("DataConn_RuntimeUserName"), Application("DataConn_RuntimePassword")
+	'DataConn.Open Session("DataConn_ConnectionString"), Session("DataConn_RuntimeUserName"), Session("DataConn_RuntimePassword")
+
+	' GET ADDITIONAL USER INFORMATION
+	Session("OfficeStaff") = false
+	Session("LongName") = "[Unknown]"
+	
+	'(((((((((((((((((((((((((((((((((((((((
+	'
+	' Modified 02/24/2000 by GTYLER
+	'
+	sql =	"SELECT e.LastName, e.FirstName, e.Username, e.EmployeeID, e.VoiceMail, et.Title_Function_ID, et.Title_Level " &_
+			"FROM employee e INNER JOIN Employee_Title et ON e.EmployeeTitle_ID = et.Employee_Title_ID " &_
+			"WHERE upper(e.Username) = '" & ucase(NTUser) & "'"
+	'sql =	"SELECT e.LastName, e.FirstName, e.Username, e.Employee_ID, e.VoiceMail, et.Title_Function_ID, et.Title_Level " &_
+	'		"FROM v_employee e INNER JOIN Employee_Title et ON e.EmployeeTitle_ID = et.Employee_Title_ID " &_
+	'		"WHERE e.Username = '" & ucase(NTUser) & "'"
+
+	set rs = DataConn.execute(sql)
+	If Not rs.EOF Then
+		Session("Name") = rs("lastname") & ", " & rs("firstname")
+		Session("LongName") = rs("firstname") & " " & rs("lastname")
+		Session("FirstName") = rs("firstname")
+
+		'(((((((((((((((((((((((((((((((((((((((
+		'
+		' Modified 02/24/2000 by GTYLER
+		'
+		Session("ID") = rs("EmployeeID")
+		'Session("ID") = rs("Employee_ID")
+
+		Session("TitleType") = rs("Title_Function_ID")
+		Session("TitleLevel") = rs("Title_Level")
+		if not isnull(rs("VoiceMail")) then
+              if trim(rs("VoiceMail")) <> "" then Session("OfficeStaff") = true
+		end if
+		Session("GotID") = true
+	Else
+		Session("GotID") = false
+	End If
+	rs.close
+	
+	' Check for guest user
+	if IsNull(Session("ID")) or Session("ID") = "" then
+	 Session("isGuest") = true
+	else
+	 Session("isGuest") = false
+	end if
+		
+	'(((((((((((((((((((((((((((((((((((((((
+	'
+	' Modified 08/03/2000 by SSeissiger
+	'
+	sql =	"SELECT EmployeeID, EmployeeTitle_ID FROM employee " &_
+					"WHERE EmployeeID = " & Session("ID")
+					
+	set rs = DataConn.execute(sql)
+	Session("titleID") = rs("EmployeeTitle_ID")
+
+	'Moved from Application_OnStart by Nick Yates(3-29-2000)
+	'----------------------------------------------
+	'  Build weather, search and stock entries on  
+	'  the right margin, replacing the section     
+	'  preference buttons.                         
+	'----------------------------------------------
+	Dim NL, sectionBtns
+	NL = chr(13) & chr(10)
+	sectionBtns = ""
+	'WEATHER
+	sectionBtns = sectionBtns & "Weather<br><table border=1 cellpadding=0 cellspacing=0><tr><td>"
+	sectionBtns = sectionBtns & "<a href='javascript:showWeather()' onMouseOver='statusMap()' onMouseOut='statusNone()'><img name=map src='http://maps.weather.com/images/maps/current/cur_ec_277x187.jpg' alt='Weather maps' height=70 width=115 border=0></a>"
+	sectionBtns = sectionBtns & "</td></tr></table>" & NL
+
+	'Get 401K Information
+	set fso = Server.CreateObject("Scripting.FileSystemObject")
+	if fso.FileExists(Application("401KFile")) then
+		set f = fso.GetFile(Application("401KFile"))
+		set ts = fso.OpenTextFile(Application("401KFile"))
+		DateTime = f.DateLastModified
+		DateTime = MonthName(Month(DateTime),true) & " " & Day(DateTime) & ", " & Year(DateTime)
+		'sectionBtns = sectionBtns & "<p><font color=red><a href='http://www.my401k.com' target='blank'>401K Info</a>- " & DateTime & "</font><br>" & NL
+		sectionBtns = sectionBtns & "<p>401K Info <font color=silver>- " & DateTime & "</font><br>" & NL
+		sectionBtns = sectionBtns & "<table border=1 cellpadding=0 cellspacing=0><tr><td><table border=0 cellpadding=2 cellspacing=0 bgcolor=#d0d0d0 width=115>" & NL
+		sectionBtns = sectionBtns & ts.ReadAll & NL & "</table></td></tr></table>" & NL
+		ts.close
+	end if
+
+	'PREFERENCES
+	sectionBtns = sectionBtns & "<form id=form1 name=form1><input type=button class=button value='Preferences' onClick=" &chr(34)& "window.location='../../preferences/content/default.asp'" &chr(34)& " onMouseOver=" &chr(34)& " statmsg('View and set your preferences'); return true;" & chr(34) & "onMouseOut=" & chr(34) & "statmsg('')"& chr(34) & "></form>" & NL
+	if not Session("isGuest") then 
+	'EMAIL
+	sectionBtns = sectionBtns & "<form id=form1 name=form1><input type=button class=button value='Quick email' onClick=" & chr(34) & "winTech=window.open('../../email.asp?editto=yes&footer=" & Server.URLEncode("INTRANET: Quick Email") & "', 'SendEmail','height=330,width=520,toolbar=0,location=0,directories=0,status=0,menubar=0,resizable=1, scrollbar=1'); return false;" & chr(34) & " onMouseOver=" &chr(34)& " statmsg('Send quick email to another Sark'); return true;" & chr(34) & "onMouseOut=" & chr(34) & "statmsg('')"& chr(34) & "></form>" & NL
+	'FEEDBACK
+	sectionBtns = sectionBtns & "<form id=form1 name=form1><input type=button class=button value='Feedback' onClick='SendFeedback()' onMouseOver=" &chr(34)& " statmsg('Send feedback email to webmaster(s).'); return true;" & chr(34) & "onMouseOut=" & chr(34) & "statmsg('')"& chr(34) & " id=button1 name=button1></form>" & NL
+	end if
+	
+	'SEARCH
+	sectionBtns = sectionBtns & "<table border=0 cellpadding=0 cellspacing=0><tr><td>"
+	sectionBtns = sectionBtns & "<a href='http://www.yahoo.com' target='blank'><img src='../../yahoo.gif' alt='Do you Yahoo?' height=27 width=110 border=0></a><p>"
+	sectionBtns = sectionBtns & "</td></tr></table>" & NL
+	'sectionBtns = sectionBtns & "<form name=frmSearch method=post action='searchFrame.asp'>"
+	'sectionBtns = sectionBtns & "Search the Web<br><input type=text class=fldSearch name=search size=12 maxlength=100>"
+	'sectionBtns = sectionBtns & "<input type=submit class=button value='Go' id=submit1 name=submit1>"
+	'sectionBtns = sectionBtns & "</form>" & NL
+	
+	'STOCKS
+	sectionBtns = sectionBtns & "<table border=0 cellpadding=0 cellspacing=0><tr><td>"
+	sectionBtns = sectionBtns & "<a href='http://www.nasdaq.com' target='blank'><img src='../../nasdaq.gif' alt='Stock quotes & research' height=27 width=110 border=0></a><p>"
+	sectionBtns = sectionBtns & "</td></tr></table>" & NL
+	'sectionBtns = sectionBtns & "<form name=frmStock method=post action='stockFrame.asp'>"
+	'sectionBtns = sectionBtns & "Stock Lookup<br><input type=text class=fldSearch name=stock size=12 maxlength=100>"
+	'sectionBtns = sectionBtns & "<input type=submit class=button value='Go' id=submit1 name=submit1>"
+	'sectionBtns = sectionBtns & "</form>" & NL
+	
+	'MapQuest
+	sectionBtns = sectionBtns & "<table border=0 cellpadding=0 cellspacing=0><tr><td>"
+	sectionBtns = sectionBtns & "<a href='http://www.mapquest.com' target='blank'><img src='../../mapquestlogo.gif' alt='Find your way home' height=27 width=110 border=0></a><p>"
+	sectionBtns = sectionBtns & "</td></tr></table>" & NL
+
+	'MetLife
+	'sectionBtns = sectionBtns & "<table border=0 cellpadding=0 cellspacing=0><tr><td>"
+	'sectionBtns = sectionBtns & "<a href='http://www.my401k.com' target='_blank'><img src='../../metlifelogosnoopy.gif' alt='MetLife 401k Homepage' height=50 width=85 border=0></a><p>"
+	'sectionBtns = sectionBtns & "</td></tr></table>" & NL
+	
+	'Account4
+	'sectionBtns = sectionBtns & "<table border=0 cellpadding=0 cellspacing=0 bgcolor='white'><tr><td>"
+	'sectionBtns = sectionBtns & "<a href='http://207.152.96.9/a4roott/a4home.htm' target='_blank'><img src='../../acct4.gif' alt='Account4 Homepage' height=50 width=130 border=0></a>"
+	'sectionBtns = sectionBtns & "</td></tr></table><p>" & NL
+
+	'IE5
+	sectionBtns = sectionBtns & "<table border=1 cellpadding=0 cellspacing=0><tr><td>"
+	'sectionBtns = sectionBtns & "<a href='http://www.microsoft.com/windows/ie/default.htm' target='_blank'><img src='../../lgoIE.gif' alt='IE5 Download' height=68 width=73 border=0></a>"
+	sectionBtns = sectionBtns & "<a href='http://www.microsoft.com/windows/ie/default.htm' target='_blank'><img src='../../IE4get_animated.gif' alt='IE5 Download' height=31 width=81 border=0></a>"
+	sectionBtns = sectionBtns & "</td></tr></table>" & NL
+
+	'--------------------------------------
+	' Store sectionBtns as session var
+	'--------------------------------------
+	session("WelcomeMargin") = sectionBtns
+	
+	'--------------------------------------------------------------------
+	' Added by Dave Podnar on 8/15/2000
+	' Determines if the current user has filled out the online survey.
+	'--------------------------------------------------------------------
+	sql = "SELECT Online_Survey.EmployeeID FROM Online_Survey " _
+	& " WHERE Online_Survey.EmployeeID = " & Session("ID")
+	
+	set rs = DataConn.execute(sql)
+
+	If Not rs.eof Then
+		Session("Surveyed")=True
+	End If
+	
+	rs.close
+	
+	' STORE HIT INFORMATION
+	on error resume next
+	set rs = DataConn.execute("insert into LogSession (LogApp_ID, LogSession_ID, Username, SessionStart, BrowserName, BrowserVersion) VALUES (" & Application("ID") & ", " & Session.SessionID & ",'" & ucase(Session("Username")) & "', '" & Session("Now") & "', '" & Session("BrowserName") & "','" & Session("BrowserVersion") & "')")
+	set rs = DataConn.execute("update LogSession set SessionEnd = null where LogApp_ID = " & Application("ID") & " and LogSession_ID = " & Session.SessionID)
+	on error goto 0
+	
+	' CLOSE DATABASE CONNECTION
+	DataConn.close
+	set DataConn = nothing
+
+
+	'Get Weather Information
+	set fso = Server.CreateObject("Scripting.FileSystemObject")
+	path = Application("WeatherFile")
+	set ts = fso.OpenTextFile(path)
+	session("sW_HTML") = ts.ReadAll
+	session("sW_HTML") = Replace(session("sW_HTML"), chr(34), "")
+	ts.close
+	
+	'Get CNET News
+	path = Application("CNETFile")
+	set ts = fso.OpenTextFile(path)
+	session("sCNet_HTML") = ts.ReadAll
+	session("sCNet_HTML") = Replace(session("sCNet_HTML"), chr(34), "")
+	ts.close
+	
+	'Get Announcements
+	set fso = Server.CreateObject("Scripting.FileSystemObject")
+	path = Application("AnnouncementsFile")
+	set ts = fso.OpenTextFile(path)
+	session("sAnnouncements") = ts.ReadAll
+	ts.close
+	
+	'Insert another file here
+	path = Application("Announcements2File")
+	set ts = fso.opentextfile(path)
+	session("sAnnouncements") = session("sAnnouncements") & ts.ReadAll
+	ts.close
+
+	'Added on 07/11/2000 by SHSMITH
+	'Insert two edit buttons for the Webmaster to update each announcement
+	'If hasRole("WebMaster") Then
+	'	  session("sAnnouncements") = session("sAnnouncements") &_
+	'	      "<CENTER><INPUT TYPE=button class=button NAME='EditOne' " & _
+	'	          "VALUE = 'Edit One' OnClick='window.location=" & chr(34) & "update.asp?Announcement_ID=1" & chr(34)& "' >"
+	'	        
+    ' session("sAnnouncements") = session("sAnnouncements") &_
+  	'      "<INPUT TYPE=button class=button NAME='EditTwo' " & _
+	'	          "VALUE = 'Edit Two' OnClick='window.location=" & chr(34) & "update.asp?Announcement_ID=2" & chr(34) & "' ></CENTER"
+	'End If
+	
+	'--------------------------------------
+	'  Set web site user counters          
+	'--------------------------------------
+
+	' INCREMENT CONCURRENT USER COUNTER
+	Application.Lock
+	Application("CurrentUsers") = Application("CurrentUsers") + 1
+	Application.Unlock
+
+End Sub
+
+
+
+
+
+Sub Session_OnEnd
+
+	on error resume next
+	
+	
+	'--------------------------------------
+	'  Store session information for user  
+	'--------------------------------------
+
+	' OPEN DATABASE CONNECTION
+	set DataConn = Server.CreateObject("ADODB.Connection")
+	DataConn.ConnectionTimeout = Session("DataConn_ConnectionTimeout")
+	DataConn.CommandTimeout = Session("DataConn_CommandTimeout")
+	DataConn.Open Session("DataConn_ConnectionString"), Session("DataConn_RuntimeUserName"), Session("DataConn_RuntimePassword")
+
+	' UPDATE USER SESSION INFO
+	set rs = DataConn.execute("update LogSession set SessionEnd = '" &  Now  & "' where LogApp_ID = " & Application("ID") & " and LogSession_ID = " & Session.SessionID)
+
+	' CLOSE DATABASE CONNECTION
+	DataConn.close
+	set DataConn = nothing
+
+	'--------------------------------------
+	'  Cleanup after email
+	'--------------------------------------
+
+	' IMPERSONATE APPROPRIATE USER'S NT SECURITY
+	set objRenderApp = Application("RenderApplication")
+	fRevert = false
+	hImp = Session("hImp")
+	if not IsEmpty(hImp) then fRevert = objRenderApp.Impersonate(hImp)
+
+	' CLEAN OUT EMAIL FOLDER CACHE
+	set Session("/Inbox") = nothing
+	set Session("/") = nothing
+	
+	' LOGOFF MAIL & CLEANUP OBJECTS
+	set objOMSession = Session("MAPIsession")
+	if not objOMSession is Nothing then
+		set Session("MAPIsession") = nothing
+		objOMSession.Logoff
+		set objOMSession = nothing
+		end if
+
+	' REVERT SECURITY TO NON-AUTHENTICATED
+	if (fRevert) then objRenderApp.Impersonate(0)
+
+	'--------------------------------------
+	'  Set web site user counters          
+	'--------------------------------------
+
+	Application.Lock
+	Application("CurrentUsers") = Application("CurrentUsers") - 1
+	Application.Unlock
+
+End Sub
+
+
+</SCRIPT>

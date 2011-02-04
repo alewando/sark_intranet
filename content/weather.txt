@@ -1,0 +1,70 @@
+"<td align=center class=""sectionBody"" nowrap>TODAY<BR>JAN 5<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/24.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Windy'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;38&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;27&deg;F</NOBR></td>
+
+
+
+<td align=center class=""sectionBody"" nowrap>SAT<BR>JAN 6<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/28.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Mostly Cloudy'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;35&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;31&deg;F</NOBR></td>
+
+
+
+<td align=center class=""sectionBody"" nowrap>SUN<BR>JAN 7<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/5.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Rain and Snow'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;50&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;36&deg;F</NOBR></td>
+
+
+
+<td align=center class=""sectionBody"" nowrap>MON<BR>JAN 8<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/41.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Scattered Snow Showers'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;40&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;30&deg;F</NOBR></td>
+
+
+
+<td align=center class=""sectionBody"" nowrap>TUE<BR>JAN 9<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/30.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Partly Cloudy'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;42&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;33&deg;F</NOBR></td>
+
+
+
+<td align=center class=""sectionBody"" nowrap>WED<BR>JAN 10<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/28.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Mostly Cloudy'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;48&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;40&deg;F</NOBR></td>
+
+
+
+<td align=center class=""sectionBody"" nowrap>THU<BR>JAN 11<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/28.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Mostly Cloudy'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;52&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;41&deg;F</NOBR></td>
+
+
+
+<td align=center class=""sectionBody"" nowrap>FRI<BR>JAN 12<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/11.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Showers'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;46&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;30&deg;F</NOBR></td>
+
+
+
+<td align=center class=""sectionBody"" nowrap>SAT<BR>JAN 13<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/32.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Sunny'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;40&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;27&deg;F</NOBR></td>
+
+
+
+<td align=center class=""sectionBody"" nowrap>SUN<BR>JAN 14<br>
+<IMG SRC=http://image.weather.com/weather/wx_icons/PFMSforecastTrans/32.gif WIDTH=26 HEIGHT=26 BORDER=0 ALT='Sunny'><br>
+<FONT COLOR=#FF0000><NOBR>hi&nbsp;42&deg;F</FONT></NOBR><BR>
+<FONT COLOR=#0000FF><NOBR>lo&nbsp;31&deg;F</NOBR></td>
+
+
+"

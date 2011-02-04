@@ -1,0 +1,64 @@
+<tr>
+  <TD align=center><font size=1 face=arial><a target=_blank HREF=http://quicken.excite.com/investments/quotes/?symbol=TEMFX>TEMFX</A></TD>
+  <TD align=right><font size=1 face=arial>10.38</B></TD>
+    <TD align=right><FONT size=1 FACE=arial COLOR=#008800>+0.12</FONT></TD>
+  
+  
+  
+  
+</TR>
+<tr>
+  <TD align=center><font size=1 face=arial><a target=_blank HREF=http://quicken.excite.com/investments/quotes/?symbol=LSCRX>LSCRX</A></TD>
+  <TD align=right><font size=1 face=arial>20.12</B></TD>
+    <TD align=right><FONT size=1 FACE=arial COLOR=#FF0000>-0.31</FONT></TD>
+  
+  
+  
+  
+</TR>
+<tr>
+  <TD align=center><font size=1 face=arial><a target=_blank HREF=http://quicken.excite.com/investments/quotes/?symbol=OAKMX>OAKMX</A></TD>
+  <TD align=right><font size=1 face=arial>30.87</B></TD>
+    <TD align=right><FONT size=1 FACE=arial COLOR=#008800>+0.27</FONT></TD>
+  
+  
+  
+  
+</TR>
+<tr>
+  <TD align=center><font size=1 face=arial><a target=_blank HREF=http://quicken.excite.com/investments/quotes/?symbol=LSBDX>LSBDX</A></TD>
+  <TD align=right><font size=1 face=arial>11.09</B></TD>
+    <TD align=right><FONT size=1 FACE=arial COLOR=#008800>+0.03</FONT></TD>
+  
+  
+  
+  
+</TR>
+<tr>
+  <TD align=center><font size=1 face=arial><a target=_blank HREF=http://quicken.excite.com/investments/quotes/?symbol=SCDGX>SCDGX</A></TD>
+  <TD align=right><font size=1 face=arial>24.15</B></TD>
+    <TD align=right><FONT size=1 FACE=arial COLOR=#FF0000>-0.31</FONT></TD>
+  
+  
+  
+  
+</TR>
+<tr>
+  <TD align=center><font size=1 face=arial><a target=_blank HREF=http://quicken.excite.com/investments/quotes/?symbol=TWCUX>TWCUX</A></TD>
+  <TD align=right><font size=1 face=arial>32.77</B></TD>
+    <TD align=right><FONT size=1 FACE=arial COLOR=#FF0000>-0.31</FONT></TD>
+  
+  
+  
+  
+</TR>
+<tr>
+  <TD align=center><font size=1 face=arial><a target=_blank HREF=http://quicken.excite.com/investments/quotes/?symbol=JANSX>JANSX</A></TD>
+  <TD align=right><font size=1 face=arial>34.72</B></TD>
+    <TD align=right><FONT size=1 FACE=arial COLOR=#008800>+0.09</FONT></TD>
+  
+  
+  
+  
+</TR>
+  

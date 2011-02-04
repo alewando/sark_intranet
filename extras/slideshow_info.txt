@@ -1,0 +1,20 @@
+SLIDESHOW INFO
+
+To put together a slide show...
+
+ - go into a PowerPoint presentation and save it as *.JPG, and save the entire presentation.
+ - Since it saves the images as extremely LARGE (959 x ?) images, go into a graphics program
+   and drop it down to 475 x 356.  You will also want to sharpen it.  Then save it.
+ - MAKE SURE THAT THE SLIDES ARE NAMED:  slide1.???, slide2.???, etc. !!!
+ - Create a directory under "extras" for the slideshow... be sure to use a date!
+ - Upload the images to the directory, and add a link to the slide show...
+
+
+
+ <a href='javascript:SlideShow("Solution Services 3-18", "SolutionServices_19990318")'>View slides</a>)
+
+
+ - NOTE:  The javascript function for displaying the slideshow is contained in the
+          header.asp file... so it is included on every page on the Intranet site!
+
+

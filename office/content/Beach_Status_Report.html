@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<TITLE>
+Beach Status Report Form
+</TITLE>
+</HEAD>
+<BODY>
+<h2>Online Beach Status Report</h2>
+
+<form action="http://w3.sarkcincinnati.com/servlets/com.sark.cincinnati.intranet.EmailStatusServlet" method="post">
+
+<input name="beachmgr" type="hidden" value="Gene Gelasi">
+<input name="mgremail" type="hidden" value="ggelasi@sark.com">
+<ul type="circle">
+<li>Your name: <input name="name" >
+<li>Technologies you're studying:<p><TEXTAREA name=technologies rows=4 columns = 80></TEXTAREA></p>
+<li>Materials you're using to study:<p><TEXTAREA name=materials rows=4 columns = 80></TEXTAREA></p>
+<li>Any new materials that you would like to see on the 
+    beach:<p><TEXTAREA name=newmaterials rows=4 columns = 80></TEXTAREA></p>
+<li>Plans for your next exam/certification:<p><TEXTAREA name=certplans rows=4 columns = 80></TEXTAREA></p>
+<li>Sark/Beach projects you're working on:<p><TEXTAREA name=sarkprojects rows=4 columns = 80></TEXTAREA></p>
+<li>Questions/Concerns:<p><TEXTAREA name=questions rows=4 columns = 80></TEXTAREA> 
+    <OL></OL>
+<input name="ccme" type="checkbox" value="true"> Send email copy to me at this email address: <input name="sarkemail" >
+<p>
+<input type=submit value="Submit"><input type=reset value="Clear" id=reset1 name=reset1><input type=button value="Cancel" onClick=window.close()>
+
+     
+</form></P></LI></UL>
+
+
+
+
+
+</BODY>
+</HTML>
+ 
